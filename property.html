@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventory</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="logo">B</div>
+    <div>
+      <h1 id="prop-title">Inventory</h1>
+      <div class="muted">Inspection report</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="cert-cover" class="certi">
+      <div class="ribbon">Certificate</div>
+      <div>
+        <h2>Inventory Certificate</h2>
+        <div class="kv">
+          <div>Report Type:</div><div>Detailed Inventory</div>
+          <div>Inspection Date:</div><div data-meta="inspection_date"></div>
+          <div>Client:</div><div data-meta="client"></div>
+          <div>Address:</div><div id="addr" data-meta="address"></div>
+          <div>Agent/Provider:</div><div data-meta="inspector"></div>
+          <div>Provider No.:</div><div data-meta="provider_no"></div>
+          <div>Office:</div><div data-meta="office_address"></div>
+          <div>Tel:</div><div data-meta="tel"></div>
+          <div>Email:</div><div data-meta="email"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overall" class="print-break">
+      <table>
+        <thead><tr><th colspan="4">Overall Survey</th></tr></thead>
+        <tbody></tbody>
+        <tfoot><tr><td colspan="4">Cells are editable before printing. Use the room sections for photos and detailed notes.</td></tr></tfoot>
+      </table>
+    </section>
+
+    <section id="rooms" class="print-break"></section>
+
+    <section id="signatures" class="print-break">
+      <h2>Signatures</h2>
+      <div class="sig-row">
+        <div class="sig-card" data-role="Agent">
+          <div class="sig-meta">
+            <label>Agent name <input type="text" class="sig-name" placeholder="Full name"></label>
+            <label>Date <input type="date" class="sig-date"></label>
+          </div>
+          <div class="sig-pad-wrap">
+            <canvas class="sig-canvas" width="600" height="200" aria-label="Signature canvas"></canvas>
+            <div class="sig-hint">Sign here</div>
+            <img class="sig-image" alt="Saved signature" />
+          </div>
+          <div class="sig-actions no-print">
+            <button class="sig-clear" type="button">Clear</button>
+            <button class="sig-save" type="button">Save & lock</button>
+          </div>
+          <div class="sig-stamp"></div>
+        </div>
+        <div class="sig-card" data-role="Resident">
+          <div class="sig-meta">
+            <label>Resident name <input type="text" class="sig-name" placeholder="Full name"></label>
+            <label>Date <input type="date" class="sig-date"></label>
+          </div>
+          <div class="sig-pad-wrap">
+            <canvas class="sig-canvas" width="600" height="200" aria-label="Signature canvas"></canvas>
+            <div class="sig-hint">Sign here</div>
+            <img class="sig-image" alt="Saved signature" />
+          </div>
+          <div class="sig-actions no-print">
+            <button class="sig-clear" type="button">Clear</button>
+            <button class="sig-save" type="button">Save & lock</button>
+          </div>
+          <div class="sig-stamp"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© Bergason Property Services LTD</footer>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script>InventoryApp.renderProperty();</script>
+</body>
+</html>

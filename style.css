@@ -1,0 +1,66 @@
+
+:root{
+  --berg-green:#2d7a6a;
+  --pill-good:#88B04B;
+  --pill-fair:#F5A623;
+  --pill-poor:#D0021B;
+  --pill-na:#BDBDBD;
+  --ink:#1a1a1a;
+  --muted:#666;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial}
+main{max-width:930px;margin:24px auto;padding:0 16px 60px}
+header.site{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:3px solid var(--berg-green)}
+.logo{width:44px;height:44px;border-radius:8px;background:var(--berg-green);display:grid;place-items:center;color:#fff;font-weight:700}
+h1,h2,h3{margin:12px 0}
+h1{font-size:28px}
+h2{font-size:20px}
+h3{font-size:16px}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;background:#eee;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 12px}
+.grid img{width:100%;height:180px;object-fit:cover;border-radius:6px;border:1px solid #ddd}
+.room details{border:1px solid #e1e1e1;border-radius:10px;margin:10px 0;background:#fafafa}
+.room summary{list-style:none;padding:10px 12px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.room summary::-webkit-details-marker{display:none}
+.chev{transition:transform .2s ease}
+details[open] .chev{transform:rotate(90deg)}
+.pill{display:inline-block;min-width:72px;padding:4px 10px;border-radius:6px;color:#fff;font-weight:600;text-align:center;font-size:12px}
+.pill.good{background:var(--pill-good)}
+.pill.fair{background:var(--pill-fair)}
+.pill.poor{background:var(--pill-poor)}
+.pill.na{background:var(--pill-na)}
+.notes{background:#fff;border-top:1px solid #eee;padding:10px 12px;font-size:14px}
+.room-toolbar{display:flex;gap:8px;padding:0 12px 8px;align-items:center;flex-wrap:wrap}
+.room-toolbar a.button{padding:6px 10px;border:1px solid #bbb;border-radius:6px;text-decoration:none;color:var(--ink);background:#fff}
+.kv{display:grid;grid-template-columns:180px 1fr;gap:6px}
+.kv div{padding:3px 0}
+#overall table{width:100%;border-collapse:collapse}
+#overall th,#overall td{border:1px solid #c8d2da;padding:8px}
+#overall thead th{background:#5f7990;color:#fff;font-size:18px;text-align:left}
+#cert-cover{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;margin:18px 0}
+.certi{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;margin:18px 0}
+.certi .ribbon{background:var(--berg-green);color:#fff;width:120px;display:grid;place-items:center;border-radius:12px;padding:20px 10px;writing-mode:vertical-rl;text-orientation:mixed;font-size:28px;letter-spacing:2px}
+.sig-row{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:900px){ .sig-row{grid-template-columns:1fr 1fr} }
+.sig-card{border:1px solid #ddd;padding:12px;border-radius:8px;background:#fff}
+.sig-pad-wrap{position:relative;border:1px dashed #bbb;border-radius:8px;background:#fafafa}
+.sig-canvas,.sig-image{width:100%;height:auto;display:block;border-radius:8px}
+.sig-image{display:none}
+.sig-hint{position:absolute;inset:0;display:grid;place-items:center;color:#999;font-size:14px;pointer-events:none}
+.sig-actions{display:flex;gap:8px;margin-top:8px}
+.sig-actions button{padding:8px 12px;border-radius:6px;border:1px solid #bbb;background:#f5f5f5;cursor:pointer}
+.sig-stamp{margin-top:6px;font-size:12px;color:#666;min-height:1em}
+
+footer{margin-top:30px;font-size:12px;color:var(--muted)}
+
+/* Print CSS */
+@media print{
+  header.site, .no-print{display:none!important}
+  main{max-width:none;margin:0;padding:0}
+  .grid img{height:150px}
+  .room{page-break-inside:avoid}
+  .print-break{page-break-before:always}
+  body{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+}
